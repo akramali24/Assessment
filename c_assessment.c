@@ -32,17 +32,17 @@ int Palindrome(char *str) {
 }
 
 // Function to copy a string
-void copyString(char *destination, char *source) {
+void copy(char *destination, char *source) {
     strcpy(destination, source);
 }
 
 // Function to find the length of a string
-int lengthOfString(char *str) {
+int length(char *str) {
     return strlen(str);
 }
 
 // Function to find the frequency of a character in a string
-int frequencyOfCharacter(char *str, char ch) {
+int frequency(char *str, char ch) {
     int count = 0;
     for (int i = 0; i < strlen(str); i++) {
         if (str[i] == ch) {
@@ -53,7 +53,7 @@ int frequencyOfCharacter(char *str, char ch) {
 }
 
 // Function to count the number of vowels and consonants in a string
-void countVowelsAndConsonants(char *str, int *vowels, int *consonants) {
+void VowelsAndConsonants(char *str, int *vowels, int *consonants) {
     *vowels = 0;
     *consonants = 0;
     for (int i = 0; i < strlen(str); i++) {
@@ -66,7 +66,7 @@ void countVowelsAndConsonants(char *str, int *vowels, int *consonants) {
 }
 
 // Function to count the number of blank spaces and digits in a string
-void countSpacesAndDigits(char *str, int *spaces, int *digits) {
+void SpacesAndDigits(char *str, int *spaces, int *digits) {
     *spaces = 0;
     *digits = 0;
     for (int i = 0; i < strlen(str); i++) {
@@ -89,14 +89,14 @@ int main() {
     // Main loop for the menu-driven program
     while (1) {
         printf("\n Main Menu\n");
-        printf("1. Reverse a string\n");
-        printf("2. Concatenation\n");
+        printf("1. Reverse\n");
+        printf("2. Concat\n");
         printf("3. Palindrome\n");
-        printf("4. Copy a string\n");
-        printf("5. Length of the string\n");
-        printf("6. Frequency of character in a string\n");
-        printf("7. Find number of vowels and consonants\n");
-        printf("8. Find number of blank spaces and digits\n");
+        printf("4. string Copy\n");
+        printf("5. Length\n");
+        printf("6. Frequency \n");
+        printf("7. vowels and consonants\n");
+        printf("8. blank spaces and digits\n");
         printf("9. Exit\n");
         printf("Please Enter your choice: ");
         scanf("%d", &choice);
@@ -132,14 +132,14 @@ int main() {
             case 4: // Copy a string
                 printf("Enter the source string: ");
                 scanf(" %[^\n]", str1);
-                copyString(temp, str1);
+                copy(temp, str1);
                 printf("Copied string: %s\n", temp);
                 break;
                 
             case 5: // Length of the string
                 printf("Enter a string: ");
                 scanf(" %[^\n]", str1);
-                printf("Length of the string: %d\n", lengthOfString(str1));
+                printf("Length of the string: %d\n", length(str1));
                 break;
                 
             case 6: // Frequency of character in a string
@@ -147,13 +147,13 @@ int main() {
                 scanf(" %[^\n]", str1);
                 printf("Enter the character to find the frequency of: ");
                 scanf(" %c", &ch);
-                printf("Frequency of '%c': %d\n", ch, frequencyOfCharacter(str1, ch));
+                printf("Frequency of '%c': %d\n", ch, frequency(str1, ch));
                 break;
                 
             case 7: // Find number of vowels and consonants
                 printf("Enter a string: ");
                 scanf(" %[^\n]", str1);
-                countVowelsAndConsonants(str1, &vowels, &consonants);
+                VowelsAndConsonants(str1, &vowels, &consonants);
                 printf("Number of vowels: %d\n", vowels);
                 printf("Number of consonants: %d\n", consonants);
                 break;
@@ -161,7 +161,7 @@ int main() {
             case 8: // Find number of blank spaces and digits
                 printf("Enter a string: ");
                 scanf(" %[^\n]", str1);
-                countSpacesAndDigits(str1, &spaces, &digits);
+                SpacesAndDigits(str1, &spaces, &digits);
                 printf("Number of blank spaces: %d\n", spaces);
                 printf("Number of digits: %d\n", digits);
                 break;
